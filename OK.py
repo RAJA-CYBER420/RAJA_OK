@@ -158,6 +158,7 @@ RR = '\x1b[38;5;196m'
 GS = '\x1b[38;5;40m'
 W = '\x1b[1;37m'
 
+
 import random
 
 def windows():
@@ -199,6 +200,20 @@ def window1():
     build_2 = random.choice(range(6200, 7150))
     patch_2 = random.choice(range(50, 250))
     B = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_alt}.0.{build_2}.{patch_2} Safari/537.36"
+    
+    # Compatibility style for enterprise networks
+    chrome_major_ent = random.choice(range(118, 135))
+    build_3 = random.choice(range(5800, 6800))
+    C = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:{random.choice(range(110, 130))}.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_ent}.0.{build_3}.{random.choice(range(10, 190))} Safari/537.36"
+    
+    # Ultra-latest builds (Chrome 140+)
+    latest_build = random.randint(7000, 7500)
+    latest_patch = random.randint(100, 300)
+    chrome_ultra = random.choice(range(140, 146))
+    D = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_ultra}.0.{latest_build}.{latest_patch} Safari/537.36"
+    
+    return random.choice([A, B, C, D])
+
     
     # Compatibility style for enterprise networks
     chrome_major_ent = random.choice(range(118, 135))
